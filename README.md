@@ -5,8 +5,16 @@ This project delivers a real-time inventory diagnostic model designed to identif
 
 ## Architecture & Technical Execution
 
-### 1. Data Extraction & Transformation (SQL Server)
-Engineered a customized view (`vw_InventoryAnalysis`) extracting from the `AdventureWorksLT` database. 
+### 1. Raw Data Extraction
+Initial extraction from the `AdventureWorksLT` database displaying the unstructured state of the relational tables prior to analytical transformation.
+
+![Raw Data](Raw_Data.png)
+
+### 2. Data Transformation & Cleaning (SQL Server)
+Engineered a customized view (`vw_InventoryAnalysis`) extracting from the `AdventureWorksLT` database to structure the data for real-time diagnostic reporting. 
+
+![Cleaned Data](cleaned.png)
+
 - Integrated `SalesLT.Product` and `SalesLT.ProductCategory`.
 - Engineered simulated real-time variance for `OnHandQty` utilizing modulo operators to bypass static historical limitations.
 - Established dynamic `SafetyStockLevel` thresholds to drive conditional formatting parameters.
